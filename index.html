@@ -3,48 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Моё Портфолио</title>
-  <!-- Заглушки шрифтов -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto&display=swap" rel="stylesheet">
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <title>Портфолио Сени</title>
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/a2f94b7e56.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div id="overlay"></div>
+  <header>
+    <div class="logo">[Логотип]</div>
+    <nav>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
 
-  <section class="about" data-aos="fade-up">
-    <h2>Обо мне</h2>
-    <p>Я занимаюсь созданием сайтов и цифровым искусством.</p>
-  </section>
-
-  <section class="works" data-aos="fade-up">
-    <h2>Мои работы</h2>
-    <div class="filters">
-      <button data-filter="all">Все</button>
-      <button data-filter="logo">Логотипы</button>
-      <button data-filter="web">Сайты</button>
-      <button data-filter="nft">NFT</button>
-    </div>
-    <!-- Swiper -->
-    <div class="swiper-container">
-      <div class="swiper-wrapper" id="works-container">
-        <!-- Слайды из works.json -->
+  <main>
+    <section class="hero">
+      <h1>Привет! Я Сеня</h1>
+      <p>Digital Artist • Иллюстратор • NFT Creator</p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn primary">Посмотреть работы</a>
+        <a href="#contact" class="btn secondary">Связаться со мной</a>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </section>
+      <div class="hero-gallery">
+        <img src="https://via.placeholder.com/150x200?text=Работа+1" alt="">
+        <img src="https://via.placeholder.com/150x200?text=Работа+2" alt="">
+        <img src="https://via.placeholder.com/150x200?text=Работа+3" alt="">
+      </div>
+    </section>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+    <section id="portfolio" class="portfolio">
+      <h2>Портфолио</h2>
+      <div class="portfolio-grid">
+        <div class="card"><i class="fas fa-image"></i></div>
+        <div class="card"><i class="fas fa-image"></i></div>
+        <div class="card"><i class="fas fa-image"></i></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-text">
+        <h2>Обо мне</h2>
+        <p>Я занимаюсь созданием сайтов и цифровым искусством.</p>
+        <h3>Навыки</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Инфографика</li>
+          <li><i class="fas fa-check"></i> Пиксель-арт</li>
+          <li><i class="fas fa-check"></i> Web3</li>
+        </ul>
+      </div>
+      <div class="about-photo">
+        <img src="https://via.placeholder.com/150?text=Avatar" alt="Avatar">
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Связаться со мной</h2>
+      <form>
+        <input type="text" placeholder="Имя">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Сообщение"></textarea>
+        <button type="submit">Отправить сообщение</button>
+      </form>
+      <div class="socials">
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Сеня. Все права защищены.</p>
+  </footer>
 </body>
 </html>
