@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Пример логотипа",
+    "category": "logo",
+    "image": "https://via.placeholder.com/300x200?text=Логотип+1"
+  },
+  {
+    "title": "Пример сайта",
+    "category": "web",
+    "image": "https://via.placeholder.com/300x200?text=Сайт+1"
+  },
+  {
+    "title": "Пример NFT",
+    "category": "nft",
+    "image": "https://via.placeholder.com/300x200?text=NFT+1"
+  },
+  {
+    "title": "Пример логотипа 2",
+    "category": "logo",
+    "image": "https://via.placeholder.com/300x200?text=Логотип+2"
+  }
+]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Моё Портфолио</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+  <header>
+    <h1>Привет, я Сеня</h1>
+    <button id="theme-toggle">Сменить тему</button>
+  </header>
+
+  <section class="about" data-aos="fade-up">
+    <h2>Обо мне</h2>
+    <p>Я занимаюсь созданием сайтов и цифровым искусством.</p>
+  </section>
+
+  <section class="works" data-aos="fade-up">
+    <h2>Мои работы</h2>
+    <div class="filters">
+      <button data-filter="all">Все</button>
+      <button data-filter="logo">Логотипы</button>
+      <button data-filter="web">Сайты</button>
+      <button data-filter="nft">NFT</button>
+    </div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper" id="works-container">
+        <!-- Слайды загружаются из works.json -->
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>Контакты: <a href="mailto:youremail@example.com">youremail@example.com</a> | <a href="https://t.me/yourtelegram">Telegram</a></p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
