@@ -4,7 +4,7 @@ themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
-// Анимации при скролле
+// Анимация при скролле
 AOS.init();
 
 // Загружаем работы
@@ -24,7 +24,6 @@ fetch('works.json')
       container.appendChild(slide);
     });
 
-    // Инициализация Swiper
     const swiper = new Swiper('.swiper-container', {
       slidesPerView: 1,
       spaceBetween: 10,
@@ -46,7 +45,6 @@ fetch('works.json')
       }
     });
 
-    // Фильтрация
     const buttons = document.querySelectorAll('.filters button');
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -59,6 +57,26 @@ fetch('works.json')
           }
         });
         swiper.update();
+      });
+    });
+
+    // Открытие модального окна
+    container.querySelectorAll('.swiper-slide').forEach(slide => {
+      slide.addEventListener('click', () => {
+        const imgSrc = slide.querySelector('img').src;
+        const title = slide.querySelector('p').innerText;
+        const overlay = document.getElementById('overlay');
+        overlay.innerHTML = `
+          <div class="modal">
+            <img src="${imgSrc}" alt="">
+            <p>Описание работы: ${title}</p>
+          </div>
+        `;
+        overlay.style.display = 'flex';
+
+        overlay.addEventListener('click', () => {
+          overlay.style.display = 'none';
+        });
       });
     });
   });

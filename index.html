@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Моё Портфолио</title>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Заглушки-шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto&display=swap" rel="stylesheet">
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a2f94b7e56.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <div id="overlay"></div>
+
   <header>
     <h1>Привет, я Сеня</h1>
     <button id="theme-toggle">Сменить тему</button>
@@ -32,7 +38,7 @@
     <!-- Swiper -->
     <div class="swiper-container">
       <div class="swiper-wrapper" id="works-container">
-        <!-- Слайды загружаются из works.json -->
+        <!-- Слайды из works.json -->
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
@@ -41,14 +47,21 @@
   </section>
 
   <footer data-aos="fade-up">
-    <p>Контакты: <a href="mailto:youremail@example.com">youremail@example.com</a> | <a href="https://t.me/yourtelegram">Telegram</a></p>
+    <p>
+      <a href="https://t.me/cenybo" target="_blank" class="contact-icon">
+        <i class="fab fa-telegram-plane"></i> @cenybo
+      </a>
+      |
+      <a href="#" class="contact-icon">
+        <i class="fas fa-envelope"></i> Почта позже
+      </a>
+    </p>
   </footer>
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
