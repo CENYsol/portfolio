@@ -1,9 +1,3 @@
-// Смена темы
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-});
-
 // Анимация при скролле
 AOS.init();
 
