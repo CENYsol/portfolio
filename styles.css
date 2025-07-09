@@ -1,31 +1,39 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at 10% 50%, rgba(146,198,0,0.15), transparent 60%), #0d0d0d;
+  background: radial-gradient(circle at 90% 50%, rgba(146,198,0,0.05), transparent 60%), #0d0d0d;
   color: #eee;
 }
 
 header {
-  position: fixed; /* фиксируем меню */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.9); /* фон под меню */
   z-index: 999;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Центруем навигацию */
   align-items: center;
   padding: 20px;
-  backdrop-filter: blur(5px);
+  background: transparent; /* Прозрачный фон */
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
 }
 
 .logo img {
   height: 40px;
 }
 
+nav {
+  display: flex;
+}
+
 nav a {
   color: #ccc;
-  margin-left: 20px;
+  margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -36,7 +44,7 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: 140px 20px 60px; /* отступ сверху, чтобы не перекрывало меню */
+  padding: 140px 20px 60px; /* отступ сверху для фиксированного хедера */
 }
 
 .hero h1 {
@@ -62,6 +70,7 @@ nav a:hover {
   transition: all 0.3s;
 }
 
+/* Кнопка Посмотреть работы - заливка градиент */
 .btn.primary {
   background: linear-gradient(180deg, #f6ec00 0%, #239736 100%);
   color: #000;
@@ -71,9 +80,26 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Кнопка Связаться со мной - обводка с градиентом */
 .btn.secondary {
+  position: relative;
+  color: #eee;
+  border: none;
+  background: transparent;
+}
+
+.btn.secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 2px; /* толщина обводки */
   background: linear-gradient(180deg, #f6ec00 0%, #239736 100%);
-  color: #000;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
 .btn.secondary:hover {
@@ -138,9 +164,10 @@ nav a:hover {
   max-width: 400px;
 }
 
+/* Ровная круглая обводка */
 .about-photo {
   border-radius: 50%;
-  padding: 4px;
+  padding: 3px;
   background: linear-gradient(180deg, #f6ec00 0%, #239736 100%);
   display: inline-block;
 }
