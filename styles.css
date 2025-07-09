@@ -1,15 +1,22 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0d0d0d;
+  background: radial-gradient(circle at 10% 50%, rgba(146,198,0,0.15), transparent 60%), #0d0d0d;
   color: #eee;
 }
 
 header {
+  position: fixed; /* фиксируем меню */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9); /* фон под меню */
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  backdrop-filter: blur(5px);
 }
 
 .logo img {
@@ -29,7 +36,7 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 140px 20px 60px; /* отступ сверху, чтобы не перекрывало меню */
 }
 
 .hero h1 {
@@ -65,18 +72,18 @@ nav a:hover {
 }
 
 .btn.secondary {
-  border: 1px solid #555;
-  color: #ccc;
+  background: linear-gradient(180deg, #f6ec00 0%, #239736 100%);
+  color: #000;
 }
 
 .btn.secondary:hover {
-  background: #222;
+  transform: scale(1.05);
 }
 
 .hero-gallery img {
   width: 180px;
   height: 180px;
-  object-fit: contain; /* чтобы не обрезать */
+  object-fit: contain;
   background: #222;
   border-radius: 12px;
   margin: 0 5px;
@@ -85,7 +92,7 @@ nav a:hover {
 
 .hero-gallery img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #f6ec00;
+  box-shadow: 0 0 20px #f6ec00, 0 0 20px #239736;
 }
 
 .portfolio {
@@ -131,11 +138,19 @@ nav a:hover {
   max-width: 400px;
 }
 
+.about-photo {
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(180deg, #f6ec00 0%, #239736 100%);
+  display: inline-block;
+}
+
 .about-photo img {
   border-radius: 50%;
-  width: 100px; /* сделано намного меньше */
+  width: 100px;
   height: 100px;
   object-fit: cover;
+  display: block;
 }
 
 .about ul {
@@ -160,6 +175,7 @@ nav a:hover {
 .socials.big-icons {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
   gap: 30px;
   margin-top: 20px;
 }
