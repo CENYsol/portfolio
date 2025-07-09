@@ -12,7 +12,7 @@ header {
   width: 100%;
   z-index: 999;
   display: flex;
-  justify-content: space-between; /* меню справа */
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background: transparent;
@@ -78,13 +78,26 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Кнопка "Связаться со мной" - без заливки, с обводкой */
 .btn.secondary {
-  border: 2px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(180deg, #f6ec00, #239736);
-  background: transparent;
+  position: relative;
   color: #eee;
+  border-radius: 30px;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+}
+
+.btn.secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 2px;
+  background: linear-gradient(180deg, #f6ec00 0%, #239736 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
 .btn.secondary:hover {
@@ -145,7 +158,6 @@ nav a:hover {
   padding: 60px 20px;
 }
 
-/* Плашка с радиусом для "Обо мне" */
 .about-text {
   max-width: 500px;
   background: #181818;
@@ -154,12 +166,24 @@ nav a:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+.about-photo {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
 .about-photo img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
   object-fit: cover;
   display: block;
+}
+
+.about-photo:hover {
+  box-shadow: 0 0 20px #f6ec00, 0 0 20px #239736;
 }
 
 .about ul {
@@ -203,6 +227,4 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 20px;
-  font-size: 0.9rem;
-  color: #555;
-}
+  fo
