@@ -28,6 +28,7 @@ header {
 
 nav {
   display: flex;
+  margin-right: 20px; /* чтобы текст не обрезался */
 }
 
 nav a {
@@ -170,8 +171,6 @@ nav a:hover {
   position: relative;
   display: inline-block;
   border-radius: 50%;
-  overflow: hidden;
-  transition: box-shadow 0.3s;
 }
 
 .about-photo img {
@@ -180,9 +179,10 @@ nav a:hover {
   height: 100px;
   object-fit: cover;
   display: block;
+  transition: box-shadow 0.3s;
 }
 
-.about-photo:hover {
+.about-photo:hover img {
   box-shadow: 0 0 20px #f6ec00, 0 0 20px #239736;
 }
 
@@ -227,4 +227,9 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 20px;
-  fo
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: #777;
+}
