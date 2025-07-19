@@ -60,25 +60,28 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.carousel {
+.carousel-wrapper {
   position: relative;
-  max-width: 500px;
-  margin: 0 auto;
   overflow: hidden;
+  max-width: 740px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
 }
 
-.carousel-inner {
+.carousel-track {
   display: flex;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease-in-out;
+  gap: 20px;
 }
 
 .carousel-item {
-  min-width: 100%;
-  padding: 20px;
-  transform: scale(0.9);
+  min-width: 220px;
+  transform: scale(0.85);
   opacity: 0.5;
-  transition: all 0.3s ease-in-out;
-  border-radius: 20px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
@@ -88,28 +91,26 @@ nav a:hover {
   z-index: 2;
 }
 
-.carousel-item:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.015);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
 .carousel-item img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 20px;
   object-fit: cover;
-  transition: all 0.5s ease;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .caption {
-  margin-top: 10px;
-  color: #b7d8bc;
-  font-size: 0.9rem;
   opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.25s ease-in-out;
+  font-size: 0.8rem;
+  color: #a4eaa7;
+  transition: 0.3s ease;
 }
 
 .carousel-item:hover .caption {
@@ -117,23 +118,14 @@ nav a:hover {
   transform: translateY(0);
 }
 
-.carousel-controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.carousel-controls button {
+#prev, #next {
   background: none;
   border: none;
-  color: #77db9d;
   font-size: 2rem;
+  color: #a3ffac;
   cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.carousel-controls button:hover {
-  transform: scale(1.2);
+  z-index: 10;
+  padding: 10px;
 }
 
 .view-all {
@@ -146,6 +138,25 @@ nav a:hover {
   text-decoration: none;
   font-size: 1rem;
   border-bottom: 1px solid #9affb2;
+}
+
+.about {
+  padding: 80px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #e8ffe1;
+}
+
+.about p {
+  color: #c1c1c1;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 footer {

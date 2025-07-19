@@ -1,22 +1,24 @@
+const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
-const carouselInner = document.querySelector('.carousel-inner');
-let index = 0;
-
-document.getElementById('prev').addEventListener('click', () => {
-  index = (index - 1 + items.length) % items.length;
-  updateCarousel();
-});
-
-document.getElementById('next').addEventListener('click', () => {
-  index = (index + 1) % items.length;
-  updateCarousel();
-});
+let current = 0;
 
 function updateCarousel() {
-  const offset = -index * 100;
-  carouselInner.style.transform = `translateX(${offset}%)`;
+  const offset = -current * (items[0].offsetWidth + 20);
+  track.style.transform = `translateX(${offset}px)`;
 
-  items.forEach((item, i) => {
-    item.classList.toggle('active', i === index);
+  items.forEach((item, index) => {
+    item.classList.toggle('active', index === current);
   });
 }
+
+document.getElementById('next').addEventListener('click', () => {
+  current = (current + 1) % items.length;
+  updateCarousel();
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  current = (current - 1 + items.length) % items.length;
+  updateCarousel();
+});
+
+updateCarousel();
