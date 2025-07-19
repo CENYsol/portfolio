@@ -36,7 +36,7 @@ nav a:hover {
 
 .hero h1 {
   font-size: 4rem;
-  margin-bottom: 60px;
+  margin-bottom: 40px; /* уменьшено для подъёма вверх */
 }
 
 .hero h1 span {
@@ -121,6 +121,7 @@ nav a:hover {
   background: rgba(255,255,255,0.03);
   backdrop-filter: blur(10px);
   text-align: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* добавлена тень */
 }
 
 .about h2 {
@@ -156,4 +157,5 @@ footer {
   cursor: pointer;
   display: none;
   z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* добавлена тень */
 }
