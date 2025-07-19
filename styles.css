@@ -8,30 +8,14 @@ body {
 
 header {
   position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 30px 40px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background: transparent;
-  z-index: 1000;
-}
-
-.top-title {
-  font-size: 2.2rem;
-  line-height: 1.2;
-  color: #fff;
-}
-
-.top-title span {
-  color: #d8f5d0;
+  top: 20px;
+  right: 40px;
+  z-index: 100;
 }
 
 nav {
   display: flex;
   gap: 30px;
-  margin-top: 10px;
 }
 
 nav a {
@@ -46,8 +30,17 @@ nav a:hover {
 }
 
 .hero {
-  padding: 200px 40px 80px;
+  padding: 140px 40px 80px;
   min-height: 100vh;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 60px;
+}
+
+.hero h1 span {
+  color: #d8f5d0;
 }
 
 .section-title {
@@ -148,28 +141,4 @@ footer {
   padding: 20px;
   font-size: 0.75rem;
   color: #555;
-}
-
-.scroll-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(8px);
-  border: none;
-  font-size: 1.5rem;
-  color: #aaffc3;
-  padding: 12px 16px;
-  border-radius: 15px;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.scroll-top.visible {
-  opacity: 1;
-  pointer-events: auto;
 }

@@ -1,7 +1,6 @@
 const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
-const scrollBtn = document.getElementById('scrollTopBtn');
-let current = 1;
+let current = 1; // центральная картинка
 
 function updateCarousel() {
   const offset = -current * (items[0].offsetWidth + 20);
@@ -20,18 +19,6 @@ document.getElementById('next').addEventListener('click', () => {
 document.getElementById('prev').addEventListener('click', () => {
   current = (current - 1 + items.length) % items.length;
   updateCarousel();
-});
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    scrollBtn.classList.add('visible');
-  } else {
-    scrollBtn.classList.remove('visible');
-  }
-});
-
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 updateCarousel();
