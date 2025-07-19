@@ -3,78 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Портфолио Сени</title>
-  <!-- Шрифты -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/a2f94b7e56.js" crossorigin="anonymous"></script>
+  <title>Сеня | Портфолио</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
+  <script src="https://kit.fontawesome.com/a2f94b7e56.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="https://i.postimg.cc/Bv1Y574q/212211212.png" alt="Логотип">
-    </div>
     <nav>
-      <a href="#portfolio">Портфолио</a>
-      <a href="#about">Обо мне</a>
-      <a href="#contact">Контакты</a>
+      <a href="#">Home</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Привет! Я Сеня</h1>
-      <p>Pixel Artist • Иллюстратор • NFT Creator</p>
-      <div class="hero-buttons">
-        <a href="#portfolio" class="btn primary">Посмотреть работы</a>
-        <a href="#contact" class="btn secondary">Связаться со мной</a>
-      </div>
-      <div class="hero-gallery">
-        <img src="https://i.postimg.cc/fbjHgttF/2.gif" alt="Работа 1">
-        <img src="https://i.postimg.cc/fykBL82n/MyPP.gif" alt="Работа 2">
-        <img src="https://i.postimg.cc/Zn9xZCnJ/art4.gif" alt="Работа 3">
-      </div>
-    </section>
+  <section class="hero">
+    <h1>Portfolio<br><span>art & design</span></h1>
+    <p class="section-title">FEATURED WORK</p>
 
-    <section id="portfolio" class="portfolio">
-      <h2>Портфолио</h2>
-      <div class="portfolio-grid">
-        <div class="card"><i class="fas fa-image"></i></div>
-        <div class="card"><i class="fas fa-image"></i></div>
-        <div class="card"><i class="fas fa-image"></i></div>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://i.postimg.cc/fbjHgttF/2.gif" alt="Art 1">
+          <p class="caption">Exhibition</p>
+        </div>
+        <div class="carousel-item">
+          <img src="https://i.postimg.cc/fykBL82n/MyPP.gif" alt="Art 2">
+          <p class="caption">Exhibition</p>
+        </div>
+        <div class="carousel-item">
+          <img src="https://i.postimg.cc/Zn9xZCnJ/art4.gif" alt="Art 3">
+          <p class="caption">Exhibition</p>
+        </div>
       </div>
-    </section>
+      <div class="carousel-controls">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
+      </div>
+    </div>
 
-    <section id="about" class="about">
-      <div class="about-photo">
-        <img src="https://i.postimg.cc/mDgSXdGz/art3.gif" alt="Avatar">
-      </div>
-      <div class="about-text">
-        <h2>Обо мне</h2>
-        <p>Я занимаюсь созданием сайтов и цифровым искусством.</p>
-        <h3>Навыки</h3>
-        <ul>
-          <li><i class="fas fa-check"></i> Инфографика</li>
-          <li><i class="fas fa-check"></i> Пиксель-арт</li>
-          <li><i class="fas fa-check"></i> Web3</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Связаться со мной</h2>
-      <div class="socials big-icons">
-        <a href="#"><i class="fab fa-telegram-plane"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </section>
-  </main>
+    <div class="view-all">
+      <a href="#">View all work</a>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; CΞNY | All Rights Reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
