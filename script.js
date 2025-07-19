@@ -1,4 +1,5 @@
 const items = document.querySelectorAll('.carousel-item');
+const carouselInner = document.querySelector('.carousel-inner');
 let index = 0;
 
 document.getElementById('prev').addEventListener('click', () => {
@@ -13,5 +14,9 @@ document.getElementById('next').addEventListener('click', () => {
 
 function updateCarousel() {
   const offset = -index * 100;
-  document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+  carouselInner.style.transform = `translateX(${offset}%)`;
+
+  items.forEach((item, i) => {
+    item.classList.toggle('active', i === index);
+  });
 }

@@ -11,28 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #a5ffac;
-}
-
 .hero {
   min-height: 100vh;
   padding: 100px 40px 40px;
@@ -63,27 +41,36 @@ nav a:hover {
   position: relative;
   max-width: 500px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.8s ease-in-out;
-  border-radius: 16px;
+  transition: transform 0.45s ease-in-out;
 }
 
 .carousel-item {
   min-width: 100%;
-  transition: transform 0.5s ease;
   text-align: center;
   padding: 20px;
+  transform: scale(0.85);
+  opacity: 0.6;
+  transition: all 0.5s ease;
   border-radius: 20px;
+}
+
+.carousel-item.active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
 }
 
 .carousel-item:hover {
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.03);
 }
 
 .carousel-item img {
@@ -98,6 +85,14 @@ nav a:hover {
   margin-top: 10px;
   color: #b7d8bc;
   font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.carousel-item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .carousel-controls {
