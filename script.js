@@ -1,7 +1,7 @@
 const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
 const scrollBtn = document.getElementById('scrollTopBtn');
-let current = 1; // начинаем со второго (по центру)
+let current = 1;
 
 function updateCarousel() {
   const offset = -current * (items[0].offsetWidth + 20);
@@ -23,7 +23,11 @@ document.getElementById('prev').addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', () => {
-  scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+  if (window.scrollY > 200) {
+    scrollBtn.classList.add('visible');
+  } else {
+    scrollBtn.classList.remove('visible');
+  }
 });
 
 scrollBtn.addEventListener('click', () => {
